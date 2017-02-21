@@ -21,7 +21,7 @@ class Card extends React.Component {
                     <div className={`back-content ${back.align ? back.align : ''}`}>
                         <div className='faded-content'></div>
                         {back.images ? back.images.map((i) => {
-                                            return <img src={i} />
+                                            return <img role="presentation" src={i} />
                                         }) : []}
                         <div>{back.text}</div>
                     </div>
