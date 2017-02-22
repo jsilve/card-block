@@ -4,7 +4,7 @@ import '../styles/Card.scss';
 
 class Card extends React.Component {
     shouldComponentRender(nextState, nextProps){
-        return nextProps.data.flipped !== this.props.data.flipped
+        return nextProps.data !== this.props.data;
     }
 
     render() {
