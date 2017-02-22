@@ -14,16 +14,18 @@ class Card extends React.Component {
             <div className={`card-container ${flipped ? "flipped" : ""}`} onClick={() => {dispatch(flipCard(index))}}>
                 <CardFront>
                     <div className={`front-content ${front.align ? front.align : ''}`}>
-                            <div>{front.text}</div>
+                        <div>{front.text}</div>
                     </div>
                 </CardFront>
                 <CardBack>
                     <div className={`back-content ${back.align ? back.align : ''}`}>
                         <div className='faded-content'></div>
-                        {back.images ? back.images.map((i) => {
-                                            return <img role="presentation" src={i} />
+                        {back.images ? back.images.map((i, index) => {
+                                            return <img key={index} role="presentation" src={i} />
                                         }) : []}
-                        <div>{back.text}</div>
+                        <div className='back-text'>
+                            {back.text}
+                        </div>
                     </div>
                 </CardBack>
             </div>
